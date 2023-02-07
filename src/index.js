@@ -22,6 +22,7 @@ fetch(`http://localhost:3000/toys`)
   const andysToys = document.querySelector("#toy-collection");
   data.forEach((toy,index) => {
     const div = document.createElement('div')
+    element.classList.add("card");
     div.id = `toy-${index}`;
     div.textContent = toy.name;
     andysToys.appendChild(div);

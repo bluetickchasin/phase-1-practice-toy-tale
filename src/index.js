@@ -13,3 +13,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+fetch(`http://localhost:3000/toys`)
+.then(response =>
+  response.json()
+)
+.then (data => {
+  const andysToys = document.querySelector("#toy-collection");
+  data.forEach((toy,index) => {
+    const div = document.createElement('div')
+    div.id = `toy-${index}`;
+    div.textContent = toy.name;
+    andysToys.appendChild(div);
+  });
+});
+
+
+/* <div class="card">
+  <h2>Woody</h2>
+  <img src="[toy_image_url]" class="toy-avatar" />
+  <p>4 Likes</p>
+  <button class="like-btn" id="[toy_id]">Like ❤️</button>
+</div> */
+
+
